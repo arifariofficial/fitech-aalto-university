@@ -1,7 +1,6 @@
 const handleRequest = (request) => {
-  let message = `You made a request with method ${request.method}`;
-
-  return new Response(message);
+  const url = new URL(request.url);
+  return new Response(`${request.method} ${url.pathname}`);
 };
 
 Deno.serve(handleRequest);
