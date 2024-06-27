@@ -2,11 +2,11 @@ import { Hono } from "https://deno.land/x/hono@v3.12.11/mod.ts";
 
 const app = new Hono();
 
-app.get("/", (c) => c.text("The starting point."));
-app.post("/", (c) => c.text("Postman pat."));
-
-app.get("/it", (c) => c.text("I think so."));
-app.on("CAT", "/secrets", (c) => c.text("Meow!"));
-app.on("WHATS", "/up", (c) => c.text("A movie!"));
+app.get("/", (c) => {
+    let name = c.req.query("name") ?? "Linus";
+    return c.text(
+        `Once upon a time, there was a young kid called ${name}. ${name} was happy.`
+    );
+});
 
 Deno.serve(app.fetch);
