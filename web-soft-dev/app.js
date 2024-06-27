@@ -1,11 +1,5 @@
 const handleRequest = (request) => {
-  let message = "Unable to comply...";
-
-  if (request.method === "GET") {
-    message = "Retrieving data...";
-  } else if (request.method === "POST") {
-    message = "Posting data...";
-  }
+  let message = `You made a request with method ${request.method}`;
 
   return new Response(message);
 };
