@@ -1,12 +1,10 @@
 const handleRequest = (request) => {
-  const url = new URL(request.url);
-  let message;
-  if (url.pathname === "/one") {
-    message = "yksi";
-  } else if (url.pathname === "/two") {
-    message = "kaksi";
-  } else {
-    message = "pong";
+  let message = "Unable to comply...";
+
+  if (request.method === "GET") {
+    message = "Retrieving data...";
+  } else if (request.method === "POST") {
+    message = "Posting data...";
   }
 
   return new Response(message);
