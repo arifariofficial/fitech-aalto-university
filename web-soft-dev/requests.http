@@ -14,3 +14,6 @@ curl "http://localhost:8000?page=2&count="
 
 ###
 curl "http://localhost:8000?operation=product&number1=2&number2=5"
+
+###
+curl "http://localhost:8000?title=hero&name=Buffy"
