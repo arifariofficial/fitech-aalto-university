@@ -2,3 +2,7 @@ curl http://localhost:8000
 
 ###
 curl -X POST http://localhost:8000
+
+###
+curl "http://localhost:8000?param1=value1&param2=value2"
+
